@@ -239,7 +239,7 @@ class ActividadPartida : AppCompatActivity() {
        // val referenciaPartidas = null // TODO-06-DATABASE cambiar el valor null por el child de la database llamado "Constantes.TABLA_PARTIDAS"
         val referenciaPartidas = database.child(Constantes.TABLA_PARTIDAS)
        // val referenciaPartida = null // TODO-06-DATABASE cambiar el valor null por el child de referenciaPartidas con el id de la partida como parametro
-        val referenciaPartida = referenciaPartidas.push()
+        val referenciaPartida = referenciaPartidas.child(partida?.id ?: "")
     // TODO-06-DATABASE Descomentar la siguiente linea una vez obtenidos los dos datos anteriores
         referenciaPartida.child("oponente").setValue(jugador)
     }
